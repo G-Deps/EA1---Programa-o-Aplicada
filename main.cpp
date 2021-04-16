@@ -1,6 +1,6 @@
 #include<iostream>
 #include<string>
-#include <stdlib.h>
+#include <stdlib.h> // somente necessario para o exit(0) funcionar no VSCODE
 
 using namespace std;
 
@@ -15,13 +15,13 @@ int main () {
     string resultado;
     cout<<"Quantidade de Comandos: \n";
     cin>>quantidade;
-    if(quantidade==0){
+    if(quantidade==0){ // sempre que imputada uma string o valor de quantidade vai a 0
       cout<<"Quantidade inválida \n";
       exit(0);
     }
     for (int i=0; i<quantidade; i++){
         cin >> aux_comandos;
-        comandos += aux_comandos;
+        comandos += aux_comandos; // concatena as strings antes de tratar
         aux_comandos = "";
     }
     resultado = Decod(comandos);
@@ -32,13 +32,13 @@ string Decod (string _aux){
     string Cod,aux;
     int aux_num;
     for(int i = 0; i < signed(_aux.length());i++){
-        if(_aux[i] == '#'){     
-            switch (_aux[i+1])
+        if(_aux[i] == '#'){     //encontra caracter "#"
+            switch (_aux[i+1]) // pega valor logo a frente do "#"
             {  
             case '2':
              aux = _aux[i+3];
-             aux_num = atoi(aux.c_str());
-             Cod += dois[aux_num-1];
+             aux_num = atoi(aux.c_str()); //transforma valor de vezes que deve ser apertado em int
+             Cod += dois[aux_num-1]; //concatena em uma string os caracteres
             break;
             case '3':
              aux = _aux[i+3];
@@ -79,7 +79,7 @@ string Decod (string _aux){
             break;
             }
             int aux_tamanho = Cod.length()-1;
-            if(!Cod[aux_tamanho]){
+            if(!Cod[aux_tamanho]){ // caso o caracter nao exista fecha a função
              cout<<"Valor invalido \n";
              exit(0);
             }
@@ -87,6 +87,6 @@ string Decod (string _aux){
         }
 
     }
-    return Cod;
+    return Cod; // retorna caracteres concatenados
 }
 
