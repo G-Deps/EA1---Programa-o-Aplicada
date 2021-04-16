@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -12,10 +13,11 @@ int main () {
     string aux_comandos, comandos;
     int quantidade;
     string resultado;
-    printf("Quantidade de Comandos: \n");
+    cout<<"Quantidade de Comandos: \n";
     cin>>quantidade;
-    if(quantidade > 9 ){
+    if(quantidade==0){
       cout<<"Quantidade inválida \n";
+      exit(0);
     }
     for (int i=0; i<quantidade; i++){
         cin >> aux_comandos;
@@ -35,42 +37,42 @@ string Decod (string _aux){
             {  
             case '2':
              aux = _aux[i+3];
-             aux_num = stoi(aux);
+             aux_num = atoi(aux.c_str());
              Cod += dois[aux_num-1];
             break;
             case '3':
              aux = _aux[i+3];
-             aux_num = stoi(aux);
+             aux_num = atoi(aux.c_str());
              Cod += tres[aux_num-1];
             break;
             case '4':
              aux = _aux[i+3];
-             aux_num = stoi(aux);
+             aux_num = atoi(aux.c_str());
              Cod += quatro[aux_num-1];
             break;
             case '5':
              aux = _aux[i+3];
-             aux_num = stoi(aux);
+             aux_num = atoi(aux.c_str());
              Cod += cinco[aux_num-1];
             break;
             case '6':
              aux = _aux[i+3];
-             aux_num = stoi(aux);
+             aux_num = atoi(aux.c_str());
              Cod += seis[aux_num-1];
             break;
             case '7':
              aux = _aux[i+3];
-             aux_num = stoi(aux);
+             aux_num = atoi(aux.c_str());
              Cod += sete[aux_num-1];
             break;
             case '8':
              aux = _aux[i+3];
-             aux_num = stoi(aux);
+             aux_num = atoi(aux.c_str());
              Cod += oito[aux_num-1];
             break;
             case '9':
              aux = _aux[i+3];
-             aux_num = stoi(aux);
+             aux_num = atoi(aux.c_str());
              Cod += nove[aux_num-1];
             break;
             default:
